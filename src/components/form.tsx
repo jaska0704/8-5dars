@@ -6,6 +6,7 @@ import { createTodo } from '@/service/todo'
 interface dataType {
     name: string;
     category: string;
+    id?:number
 }
 
 export const Form = () => {

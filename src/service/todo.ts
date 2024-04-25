@@ -54,3 +54,20 @@ export const createTodo = async (data: typeTodo) => {
     throw new Error("Failed to create data");
   }
 };
+
+export const editTodo = async (id: number, data: typeTodo) => {
+  try {
+    const res = await fetch(`http://localhost:3000/tel/${id}`, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify(data),
+    });
+    const dataRes = await res.json();
+    revalidateTag("todos");
+    return dataRes;
+  } catch (error) {
+    throw new Error("Failed to edit data");
+  }
+}
