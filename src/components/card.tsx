@@ -26,7 +26,7 @@ export const Card:React.FC<Todo> = ({name, id, category}) => {
         <p>{category}</p>
       </div>
       <div>
-        <button onClick={hanleDelete} className='bg-red-500 px-5 py-2'>{loading ? "Deleting..." : "Delete"}</button>
+        <button onClick={hanleDelete} className='bg-red-500 px-5 py-2 rounded-lg'>{loading ? "Deleting..." : "Delete"}</button>
       </div>
     </div>
   );
